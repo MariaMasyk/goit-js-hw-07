@@ -23,7 +23,7 @@ function onImageClick(event) {
     const target = event.target;
     if(target.classList.contains('gallery__image')) {
         const originalImageUrl = target.dataset.source;
-        modal = basicLightbox.create('<img srs = "${galeryItem.original}" width = "800" height = "600">');
+        const modal = basicLightbox.create(`<img srs = "${galeryItem.original}" width = "800" height = "600">`);
         modal.show();
         modallsOpen = true;
     }
