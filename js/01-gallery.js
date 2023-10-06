@@ -18,16 +18,14 @@ function createMarkup(arr){
 </li>
 `).join('')
 }
-function onImageClick(event) {
+function onImageClick(event){
     event.preventDefault();
     const target = event.target;
-    if(target.classList.contains('gallery__image')) {
-        const originalImageUrl = target.dataset.source;
-        const modal = basicLightbox.create(`<img srs = "${galeryItem.original}" width = "800" height = "600">`);
-        modal.show();
-        modallsOpen = true;
-    }
-    document.addEventListener('keydown',keyDown);
-    }
-
-
+  if (event.target.nodeName !== "img")
+  return;
+    const originalImageUrl = target.dataset.source;
+    const modal = basicLightbox.create(`<img src="${originalImageUrl}" width="800" height="600">`);
+    modal.show();
+  
+    document.addEventListener('keydovn',keyDown);
+  }
