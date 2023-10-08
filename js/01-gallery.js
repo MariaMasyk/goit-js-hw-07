@@ -21,11 +21,11 @@ function createMarkup(arr){
 function onImageClick(event){
     event.preventDefault();
     const target = event.target;
-  if (event.target.nodeName !== "img")
-  return;
+  if (target.nodeName !== "IMG") return;
     const originalImageUrl = target.dataset.source;
     const modal = basicLightbox.create(`<img src="${originalImageUrl}" width="800" height="600">`);
     modal.show();
   
-    document.addEventListener('keydovn',keyDown);
+ 
   }
+
